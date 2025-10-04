@@ -1,541 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تدريبات الفريق | فريق الأنامل الرقمية</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap">
   <link rel="icon" type="image/x-icon" href="image/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    /* ===== VARIABLES ===== */
-    :root {
-      --primary: #a457ec;
-      --primary-dark: #ffffff;
-      --dark-1: #0a0a0a;
-      --dark-2: #121212;
-      --light-1: #ffffff;
-      --light-2: #f8f8f8;
-      --gray-1: #e0e0e0;
-      --gray-2: #a0a0a0;
-      --glass: rgba(30, 30, 40, 0.7);
-      --glass-light: rgba(255, 255, 255, 0.1);
-      --text-primary: #f0f0f0;
-      --text-secondary: #d8bfd8;
-      --border-color: #4B0082;
-      --border-dark: #3A2152;
-      --bg-primary: #0f0f18;
-      --bg-secondary: #1a1a24;
-      --primary-color: #1c1b28;
-      --secondary-color: #421642;
-      --text-light: #f7f7f7;
-      --text-dark: #0a0a0a;
-      --gray-light: #d0d0d0;
-      --dark-bg: #0a0a12;
-    }
-
-    /* ===== BASE STYLES ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--dark-1);
-      color: var(--light-2);
-      direction: rtl;
-      min-height: 100vh;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes bg-move {
-      0% {
-        background-position: 10% 20%, 90% 80%;
-      }
-
-      100% {
-        background-position: 15% 25%, 85% 75%;
-      }
-    }
-
-    /* ===== LAYOUT ===== */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ===== HEADER ===== */
-    .main-header {
-      background: rgba(20, 22, 30, 0.98);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 0 5%;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(31, 208, 255, 0.15);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s ease-out;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-      padding: 2px;
-      background: var(--dark-bg);
-      transition: all 0.3s ease;
-    }
-
-    .brand-name {
-      color: var(--light-1);
-      font-weight: 700;
-      font-size: 1.6rem;
-      letter-spacing: 0.5px;
-    }
-
-    .header-center {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .welcome-message {
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .header-menu-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(31, 208, 255, 0.1);
-      border: none;
-      color: var(--primary);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .header-menu-btn:hover {
-      background: rgba(31, 208, 255, 0.2);
-      color: var(--light-1);
-    }
-
-    /* ===== SIDE NAVIGATION ===== */
-    .side-nav {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 300px;
-      max-width: 85vw;
-      height: 100vh;
-      background: #17181c;
-      box-shadow: -2px 0 18px rgba(0, 0, 0, 0.67);
-      z-index: 2000;
-      display: flex;
-      flex-direction: column;
-      transition: right 0.3s ease-in-out;
-      overflow-y: auto;
-    }
-
-    .side-nav.open {
-      right: 0;
-    }
-
-    .side-nav-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px;
-      border-bottom: 1px solid #27293c;
-      background: rgba(31, 208, 255, 0.1);
-    }
-
-    .nav-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-    }
-
-    .nav-close {
-      font-size: 1.5rem;
-      color: var(--primary);
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-    }
-
-    .nav-close:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .side-nav-links {
-      display: flex;
-      flex-direction: column;
-      padding: 16px 0;
-    }
-
-    .side-nav-links a {
-      color: #f3f6fa;
-      text-decoration: none;
-      font-size: 1.1rem;
-      padding: 12px 20px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: all 0.2s ease;
-      border-right: 3px solid transparent;
-    }
-
-    .side-nav-links a.active,
-    .side-nav-links a:hover {
-      background: rgba(31, 208, 255, 0.133);
-      color: var(--primary);
-      border-right: 3px solid var(--primary);
-    }
-
-    .side-nav-footer {
-      margin-top: auto;
-      padding: 20px;
-      border-top: 1px solid #23243a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .side-social {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .side-social a {
-      color: var(--primary);
-      font-size: 1.3rem;
-      transition: color 0.2s ease;
-    }
-
-    .side-social a:hover {
-      color: var(--light-1);
-    }
-
-    .side-nav-copyright {
-      color: rgba(255, 255, 255, 0.533);
-      font-size: 0.9em;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1500;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .overlay.open {
-      display: block;
-      opacity: 1;
-    }
-
-    /* ===== CONTENT STYLES ===== */
-    .section-title {
-      color: var(--primary);
-      margin-bottom: 18px;
-      font-size: 2.1rem;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .glass {
-      background: linear-gradient(120deg, #20222a99 80%, rgba(31, 208, 255, 0.078) 100%);
-      box-shadow: 0 4px 32px rgba(31, 208, 255, 0.067), 0 2px 8px rgba(31, 208, 255, 0.039);
-      border: 1px solid rgba(31, 208, 255, 0.067);
-      backdrop-filter: blur(3.4px);
-      width: 100%;
-    }
-
-    .trainings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .training-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(31, 208, 255, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .training-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .training-info {
-      padding: 1.5rem;
-    }
-
-    .training-info h3 {
-      color: var(--light-1);
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .training-date {
-      display: inline-block;
-      background: rgba(31, 208, 255, 0.2);
-      color: var(--primary);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .training-info p {
-      color: var(--gray-1);
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    /* ===== FOOTER ===== */
-    .main-footer {
-      background: rgba(20, 20, 20, 0.95);
-      padding: 3rem 0;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin-top: 4rem;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-col {
-      flex: 1;
-      min-width: 250px;
-      padding: 1rem;
-      text-align: right;
-    }
-
-    .footer-logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid var(--primary-color);
-      padding: 3px;
-      background: var(--dark-bg);
-      margin-bottom: 1rem;
-    }
-
-    .footer-col h3,
-    .footer-col h4 {
-      color: var(--light-1);
-      margin-bottom: 1rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.5rem;
-      color: var(--gray-light);
-    }
-
-    .footer-col a {
-      color: var(--gray-light);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-col a:hover {
-      color: var(--primary);
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content:center;
-      
-      gap: 15px;
-      margin-top: 1rem;
-    }
-
-    .footer-bottom {
-      margin-top: 2rem;
-      color: var(--gray-light);
-      font-size: 0.9rem;
-    }
-
-    /* ===== MEDIA QUERIES ===== */
-    @media (max-width: 900px) {
-      .header-right .header-link:not(.header-menu-btn) {
-        display: none;
-      }
-
-      .main-header {
-        padding: 0 20px;
-      }
-
-      .brand-name {
-        font-size: 1.4rem;
-      }
-
-      .welcome-message {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .side-nav {
-        width: 85%;
-        max-width: 320px;
-      }
-
-      .side-nav-header {
-        padding: 15px;
-      }
-
-      .nav-logo {
-        width: 40px;
-        height: 40px;
-      }
-
-      .side-nav-links a {
-        padding: 15px 20px;
-        font-size: 1rem;
-      }
-
-      .trainings-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-col {
-        text-align: center;
-        margin-bottom: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .side-nav {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .side-nav-links a {
-        padding: 14px 20px;
-        font-size: 0.95rem;
-      }
-
-      .side-nav-footer {
-        padding: 15px;
-      }
-
-      .header-center {
-        display: none;
-      }
-
-      .header-left {
-        flex: 1;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* ===== UTILITY CLASSES ===== */
-    body.no-scroll {
-      overflow: hidden;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-    }
-
-    .background-animated {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      background: radial-gradient(circle at 10% 20%, rgba(31, 208, 255, 0.05) 0%, transparent 25%),
-        radial-gradient(circle at 90% 80%, rgba(31, 208, 255, 0.08) 0%, transparent 25%),
-        linear-gradient(to bottom, var(--dark-1), var(--dark-2));
-      animation: bg-move 20s infinite alternate;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 
-<body>
-  <!-- خلفية متحركة ناعمة -->
-  <div class="background-animated"></div>
-
+<body data-theme="light">
   <!-- القائمة الجانبية -->
   <aside class="side-nav" id="sideNav">
     <div class="side-nav-header">
@@ -548,7 +23,6 @@
       <a href="history.html"><i class="fas fa-clock-rotate-left"></i> تاريخ الفريق</a>
       <a href="members.html"><i class="fas fa-address-book"></i> الأعضاء</a>
       <a href="trainings.html" class="active"><i class="fas fa-chalkboard-teacher"></i> التدريبات</a>
-
       <a href="projects.html"><i class="fas fa-rocket"></i> المشاريع</a>
       <a href="announcements.html"><i class="fas fa-bell"></i> الإعلانات</a>
       <a href="events.html"><i class="fas fa-calendar-check"></i> الفعاليات</a>
@@ -562,13 +36,13 @@
         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="side-nav-copyright">
-        &copy; 2025 فريق الانامل الرقمية | DF Team
+        &copy; 2025 فريق الأنامل الرقمية | DF Team
       </div>
     </div>
   </aside>
   <div class="overlay" id="navOverlay"></div>
 
-  <!-- ترويسة -->
+  <!-- الترويسة -->
   <header class="main-header">
     <div class="header-left">
       <img src="image/logo.png" alt="شعار" class="logo">
@@ -578,161 +52,193 @@
       <span class="welcome-message">مرحباً بكم أعضاء وقائد فريق الأنامل الرقمية</span>
     </div>
     <div class="header-right">
-      <a href="#" class="header-link header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></a>
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+      <div class="fixed-header-logo">
+        <img src="image/logo school .png" alt="شعار المدرسة">
+      </div>
     </div>
   </header>
 
+  <!-- المحتوى الرئيسي -->
   <main class="container">
-    <section style="margin-top: 60px;">
-      <h1 class="section-title">ورش العمل والتدريبات</h1>
-      <div class="glass" style="padding: 22px; margin-bottom: 30px;">
-        <p>اكتشف أحدث الورش التدريبية والمحاضرات التقنية التي ينظمها الفريق:</p>
-      </div>
+    <section class="trainings-section">
+      <h2 class="section-title">ورش العمل والتدريبات</h2>
+      <p class="hero-desc" style="text-align: center; margin-bottom: 40px;">اكتشف أحدث الورش التدريبية والمحاضرات التقنية التي ينظمها الفريق</p>
+      
       <div class="trainings-grid">
-        <div class="training-card glass">
+        <div class="training-card">
           <img src="image/WhatsApp Image 2025-08-17 at 01.42.55_b5f8e373.jpg" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>مهارات التواصل الفعال</h3>
-            <span class="training-date"><i class="far fa-calendar-alt"></i>13 اغسطس 2025 </span>
-            <p>لتطوير المهارات كثل التواصل مع المتدربين و مهارات الإلقاء امام الجمهور و غيرها من المهارات المهمة في
-              المجال </p>
-            <a style="color: rgb(18, 14, 223);"><span></span>المدرب : Asmaa Saber </a>
+            <span class="training-date"><i class="far fa-calendar-alt"></i> 13 اغسطس 2025</span>
+            <p>لتطوير المهارات كثل التواصل مع المتدربين و مهارات الإلقاء امام الجمهور و غيرها من المهارات المهمة في المجال</p>
+            <span class="training-instructor">المدرب: Asmaa Saber</span>
           </div>
         </div>
-        <div class="training-card glass">
+        
+        <div class="training-card">
           <img src="image/IMG-20250820-WA0210.jpg" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>منحة اعداد مهارات القادة</h3>
             <span class="training-date"><i class="far fa-calendar-alt"></i> 20 أغسطس 2025</span>
-            <p> تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
-            <a style="color: rgb(18, 14, 223);"><span></span>المدرب القائد : Ahmed AbdelRaouf</a>
+            <p>تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
+            <span class="training-instructor">المدرب القائد: Ahmed AbdelRaouf</span>
           </div>
         </div>
-        <div class="training-card glass">
+        
+        <div class="training-card">
           <img src="image/IMG-20250820-WA0213.jpg" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>كورس scratch</h3>
             <span class="training-date"><i class="far fa-calendar-alt"></i> 25 أغسطس 2025</span>
-<p>ورشة تدريبية تفاعلية تعرّف المشاركين بأساسيات البرمجة باستخدام بيئة Scratch، حيث تعلّموا كيفية إنشاء ألعاب وقصص ورسوم متحركة بطريقة ممتعة ومبسطة، مع تنمية مهارات التفكير الإبداعي وحل المشكلات.</p>
-            <a style="color: rgb(18, 14, 223);"><span></span>Instructor : Eyad Abdelraouf </a>
+            <p>ورشة تدريبية تفاعلية تعرّف المشاركين بأساسيات البرمجة باستخدام بيئة Scratch، حيث تعلّموا كيفية إنشاء ألعاب وقصص ورسوم متحركة بطريقة ممتعة ومبسطة، مع تنمية مهارات التفكير الإبداعي وحل المشكلات.</p>
+            <span class="training-instructor">Instructor: Eyad Abdelraouf</span>
           </div>
         </div>
-        <div class="training-card glass">
+        
+        <div class="training-card">
           <img src="image/TOT.jpg" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>كورس TOT</h3>
             <span class="training-date"><i class="far fa-calendar-alt"></i> 12 أغسطس 2025</span>
-            <p> تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
-            <a style="color: rgb(18, 14, 223);"><span></span>المدرب : Ahmed AbdelRaouf</a>
+            <p>تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
+            <span class="training-instructor">المدرب: Ahmed AbdelRaouf</span>
           </div>
         </div>
-        <div class="training-card glass">
-          <img
-            src="https://thumbs.dreamstime.com/z/web-development-coding-programming-internet-technology-business-concept-web-development-coding-programming-internet-technology-125302913.jpg"
-            alt="تدريب" class="training-img">
+        
+        <div class="training-card">
+          <img src="image/blog-visuals-12.webp" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>ورشة تطوير المواقع (Web Development)</h3>
-            <span class="training-date"><i class="far fa-calendar-alt"></i>2/10/2025</span>
+            <span class="training-date"><i class="far fa-calendar-alt"></i> 2 أكتوبر 2025</span>
             <p>تعلم اساسيات انشاء مواقع الويب</p>
-            <p style="color: rgb(18, 14, 223);"><span></span>Instructor: Yassen Sayad</p>
+            <span class="training-instructor">Instructor: Baraa Saad</span>
           </div>
         </div>
-        <div class="training-card glass">
-          <img src="image/python.jpeg" alt="تدريب" class="training-img">
+        
+        <div class="training-card">
+          <img src="image/image.png" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>مقدمه اساسيات بايثون (Python)</h3>
-            <span class="training-date"><i class="far fa-calendar-alt"></i>1/8/2025</span>
+            <span class="training-date"><i class="far fa-calendar-alt"></i> 1 أغسطس 2025</span>
             <p>تعلم مهفوم اساسيات لغه بايثون</p>
-            <p style="color: rgb(18, 14, 223);"><span></span>المدرب القائد : Ahmed AbdelRaouf</p>
+            <span class="training-instructor">المدرب القائد: Ahmed AbdelRaouf</span>
           </div>
         </div>
-        <div class="training-card glass">
-          <img src="image/01b4GWdIDy2hlLfEmihhSbv-1..v1678307759.jpg" alt="تدريب"
-            class="training-img">
+        
+        <div class="training-card">
+          <img src="image/01b4GWdIDy2hlLfEmihhSbv-1..v1678307759.jpg" alt="تدريب" class="training-img">
           <div class="training-info">
             <h3>تعلم المونتاج (Video Editing)</h3>
-            <span class="training-date"><i class="far fa-calendar-alt"></i>2/5/2025</span>
+            <span class="training-date"><i class="far fa-calendar-alt"></i> 2 مايو 2025</span>
             <p>تعلم اساسيات تعديل الفيديوهات علي تطبيق CapCut</p>
-            <p style="color: rgb(18, 14, 223);"><span></span>Instructor: Anas Mohamed</p>
+            <span class="training-instructor">Instructor: Anas Mohamed</span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- تذييل -->
+  <!-- التذييل -->
   <footer class="main-footer">
-    <div class="footer-content container">
-      <div class="footer-col">
-        <img src="image/logo.png" alt="شعار" class="footer-logo">
-        <h3> فريق الانامل الرقمية </h3>
-        <p>الفريق الصاعد</p>
-      </div>
-      <div class="footer-col">
-        <h4>روابط سريعة</h4>
-        <ul>
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عن الفريق</a></li>
-          <li><a href="members.html">الأعضاء</a></li>
-          <li><a href="trainings.html">التدريبات</a></li>
-          <li><a href="projects.html">المشاريع</a></li>
-          <li><a href="events.html">الفعاليات</a></li>
-
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>تواصل معنا</h4>
-        <ul>
-          <li><i class="fas fa-envelope">&nbsp; &nbsp;</i> info@DF.com</li>
-          <li><i class="fas fa-phone">&nbsp; &nbsp;</i> 01080478274</li>
-          <li><i class="fas fa-map-marker-alt">&nbsp; &nbsp;</i>بنها - القليوبية - مصر</li>
-        </ul>
-        <br>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/share/1ErivsfJZ6/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          &nbsp; &nbsp;
-          <a href="https://github.com/Digital-Fingers-Team" target="_blank"><i class="fab fa-github"></i></a>
-          &nbsp; &nbsp;
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <img src="image/logo.png" alt="شعار" class="footer-logo">
+          <h3>فريق الانامل الرقمية</h3>
+          <p>الفريق الصاعد</p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">عن الفريق</a></li>
+            <li><a href="members.html">الأعضاء</a></li>
+            <li><a href="trainings.html">التدريبات</a></li>
+            <li><a href="projects.html">المشاريع</a></li>
+            <li><a href="events.html">الفعاليات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> info@DF.com</li>
+            <li><i class="fas fa-phone"></i> 01080478274</li>
+            <li><i class="fas fa-map-marker-alt"></i> بنها - القليوبية - مصر</li>
+          </ul>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/share/1ErivsfJZ6/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/Digital-Fingers-Team" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      جميع الحقوق محفوظة © 2025 فريق الأنامل الرقمية- DF Team
+      <div class="footer-bottom">
+        جميع الحقوق محفوظة © 2025 فريق الأنامل الرقمية- DF Team
+      </div>
     </div>
   </footer>
 
   <script>
-    // وظائف القائمة الجانبية والتفاعل
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       // عناصر القائمة الجانبية
       const sideNav = document.getElementById('sideNav');
       const closeNav = document.getElementById('closeNav');
       const menuBtn = document.getElementById('menuBtn');
       const navOverlay = document.getElementById('navOverlay');
-
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+      
+      // حالات الثيم
+      const themes = ['light', 'dark', 'purple'];
+      let currentThemeIndex = 0;
+      
+      // تطبيق الثيم
+      function applyTheme(themeIndex) {
+        document.body.setAttribute('data-theme', themes[themeIndex]);
+        
+        // تغيير الأيقونة حسب الثيم
+        if (themes[themeIndex] === 'light') {
+          themeIcon.className = 'fas fa-moon';
+        } else if (themes[themeIndex] === 'dark') {
+          themeIcon.className = 'fas fa-star';
+        } else {
+          themeIcon.className = 'fas fa-sun';
+        }
+        
+        // حفظ الثيم في localStorage
+        localStorage.setItem('theme', themes[themeIndex]);
+      }
+      
+      // تبديل الثيم
+      themeToggle.addEventListener('click', function() {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        applyTheme(currentThemeIndex);
+      });
+      
+      // تحميل الثيم المحفوظ
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        currentThemeIndex = themes.indexOf(savedTheme);
+        if (currentThemeIndex === -1) currentThemeIndex = 0;
+        applyTheme(currentThemeIndex);
+      }
+      
       // فتح القائمة الجانبية
       function openSideNav() {
-        if (sideNav) {
-          sideNav.classList.add('open');
-        }
-        if (navOverlay) {
-          navOverlay.classList.add('open');
-        }
-        // منع التمرير في الخلفية
-        document.body.classList.add('no-scroll');
+        sideNav.classList.add('open');
+        navOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
       }
 
       // إغلاق القائمة الجانبية
       function closeSideNav() {
-        if (sideNav) {
-          sideNav.classList.remove('open');
-        }
-        if (navOverlay) {
-          navOverlay.classList.remove('open');
-        }
-        // إعادة تفعيل التمرير
-        document.body.classList.remove('no-scroll');
+        sideNav.classList.remove('open');
+        navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
       }
 
       // إضافة مستمع الأحداث لزر الإغلاق
@@ -742,7 +248,7 @@
 
       // إضافة مستمع الأحداث لزر القائمة
       if (menuBtn) {
-        menuBtn.addEventListener('click', function (e) {
+        menuBtn.addEventListener('click', function(e) {
           e.preventDefault();
           openSideNav();
         });
@@ -754,33 +260,57 @@
       }
 
       // إغلاق القائمة عند الضغط على مفتاح Escape
-      document.addEventListener('keydown', function (e) {
+      document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
           closeSideNav();
         }
       });
 
-      // إغلاق القائمة تلقائيًا عند تغيير حجم النافذة إلى حجم كبير
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) {
-          closeSideNav();
+      // تحديث رسالة الترحيب حسب دور المستخدم
+      function updateWelcomeMessage() {
+        const welcomeMessage = document.querySelector('.welcome-message');
+        if (!welcomeMessage) return;
+        
+        let userData = null;
+        try {
+          userData = JSON.parse(localStorage.getItem('userData')) || 
+                    JSON.parse(sessionStorage.getItem('userData'));
+        } catch (error) {
+          console.log('لا توجد بيانات مستخدم مسجل');
         }
-      });
-
-      // منع إغلاق القائمة عند النقر عليها
-      if (sideNav) {
-        sideNav.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
+        
+        if (userData && userData.loggedIn) {
+          if (userData.role === 'قائد الفريق') {
+            welcomeMessage.textContent = `مرحباً بك قائد فريق الأنامل الرقمية (${userData.name})`;
+          } else {
+            welcomeMessage.textContent = `مرحباً بك عضو فريق الأنامل الرقمية ${userData.name}`;
+          }
+        } else {
+          welcomeMessage.textContent = 'مرحباً بكم في فريق الأنامل الرقمية';
+        }
       }
-
-      // إغلاق القائمة عند النقر على رابط
-      const navLinks = document.querySelectorAll('.side-nav-links a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeSideNav);
+      
+      window.updateWelcomeMessage = updateWelcomeMessage;
+      updateWelcomeMessage();
+      
+      // إضافة تأثيرات ظهور عند التمرير
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+      
+      // مراقبة العناصر لإضافة تأثير الظهور
+      document.querySelectorAll('.training-card').forEach(function(card) {
+        observer.observe(card);
       });
-
-      console.log('تم تحميل سكريبت القائمة الجانبية بنجاح');
     });
   </script>
 </body>
