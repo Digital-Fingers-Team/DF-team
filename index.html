@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <!-- ... (نفس محتوى وسم head) ... -->
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فريق الأنامل الرقمية | مدرسة الشهيد مدحت طلعت الرسمية للغات</title>
@@ -10,19 +9,10 @@
     <link rel="icon" type="image/x-icon" href="image/logo.png">
     <link rel="stylesheet" href="static/css/style.css">
     <meta name="description" content="فريق الأنامل الرقمية - فريق طلابي في مدرسة الشهيد مدحت طلعت الرسمية للغات يهدف إلى تطوير مهارات البرمجة والتقنية بين الطلاب من خلال مشاريع وتدريبات وفعاليات متنوعة.">
-    <style>
-        html { scroll-behavior: smooth; }
-        .hero-section { position: relative; overflow: hidden; }
-        #three-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: transparent; }
-        .hero-content, .hero-image { position: relative; z-index: 1; }
-        .hero-title, .hero-desc, .hero-btns a, .stat-card, .training-card, .testimonial-card, .leader-card { opacity: 0; transform: translateY(20px ); will-change: transform, opacity; }
-        .btn, .training-card, .testimonial-card { transition: transform 0.3s ease-out; will-change: transform; }
-    </style>
 </head>
 <body data-theme="light">
     
-    <!-- ... (نفس محتوى body من القائمة الجانبية إلى التذييل) ... -->
-    <!-- القائمة الجانبية -->
+     <!-- القائمة الجانبية -->
     <aside class="side-nav" id="sideNav">
         <div class="side-nav-header">
             <img src="image/logo.png" alt="شعار" class="nav-logo">
@@ -68,14 +58,13 @@
             </button>
             <button class="header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
             <div class="fixed-header-logo">
-                <img src="image/logo school .png" alt="شعار المدرسة">
-            </div>
+        <img src="image/logo school .png" alt="شعار المدرسة">
+    </div>
         </div>
     </header>
 
     <!-- الرئيسية/الهيرو -->
     <section class="hero-section container">
-        <canvas id="three-canvas"></canvas>
         <div class="hero-content">
             <h1 class="hero-title">فريق الأنامل الرقمية | DF Team</h1>
             <p class="hero-desc">الفريق الصاعد</p>
@@ -85,6 +74,7 @@
             </div>
         </div>
         <div class="hero-image">
+            <img src="image/logo.png" alt="شعار الفريق">
         </div>
     </section>
 
@@ -93,22 +83,22 @@
         <div class="stats-section">
             <div class="stat-card">
                 <i class="fas fa-users"></i>
-                <h3 data-stat-number="10">0</h3>
+                <h3>26</h3>
                 <p>عضو بالفريق</p>
             </div>
             <div class="stat-card">
                 <i class="fas fa-laptop-code"></i>
-                <h3 data-stat-number="2">0</h3>
+                <h3>2+</h3>
                 <p>مشروع تقني</p>
             </div>
             <div class="stat-card">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <h3 data-stat-number="9">0</h3>
+                <h3>9+</h3>
                 <p>ورشة تدريبية</p>
             </div>
             <div class="stat-card">
                 <i class="fas fa-trophy"></i>
-                <h3 data-stat-number="0">0</h3>
+                <h3>0</h3>
                 <p>جوائز تقنية</p>
             </div>
         </div>
@@ -170,7 +160,7 @@
                 <div class="training-info">
                     <h3>كورس scratch</h3>
                     <span class="training-date"><i class="far fa-calendar-alt"></i> 25 أغسطس 2025</span>
-                    <p>ورشة تدريبية تفاعلية تعرّف المشاركين بأساسيات البرمجة باستخدام بيئة Scratch...</p>
+                    <p>ورشة تدريبية تفاعلية تعرّف المشاركين بأساسيات البرمجة باستخدام بيئة Scratch، حيث تعلّموا كيفية إنشاء ألعاب وقصص ورسوم متحركة بطريقة ممتعة ومبسطة، مع تنمية مهارات التفكير الإبداعي وحل المشكلات.</p>
                     <a href="trainings.html" class="btn btn-primary btn-xs">التفاصيل</a>
                 </div>
             </div>
@@ -199,8 +189,7 @@
                 </div>
                 <div class="testimonial-author">
                     <img src="image/loka.png" alt="متدرب">
-                    <span>ملك ممدوح  
-<small>متدربة سابقة</small></span>
+                    <span>ملك ممدوح<br><small>متدربة سابقة</small></span>
                 </div>
             </div>
             <div class="testimonial-card">
@@ -209,8 +198,7 @@
                 </div>
                 <div class="testimonial-author">
                     <img src="image/profile.jpg" alt="متدربة">
-                    <span>سارة أحمد  
-<small>متدربة سابقة</small></span>
+                    <span>سارة أحمد<br><small>متدربة سابقة</small></span>
                 </div>
             </div>
         </div>
@@ -256,18 +244,9 @@
         </div>
     </footer>
 
-    <!-- تضمين المكتبات -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function( ) {
-            // --- إدارة القائمة الجانبية والثيم (بدون تغيير) ---
-            // ... (الكود الخاص بالقائمة والثيم يبقى كما هو)
+        document.addEventListener('DOMContentLoaded', function() {
+            // عناصر القائمة الجانبية
             const sideNav = document.getElementById('sideNav');
             const closeNav = document.getElementById('closeNav');
             const menuBtn = document.getElementById('menuBtn');
@@ -275,22 +254,34 @@
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = themeToggle.querySelector('i');
             
+            // حالات الثيم
             const themes = ['light', 'dark', 'purple'];
             let currentThemeIndex = 0;
             
+            // تطبيق الثيم
             function applyTheme(themeIndex) {
                 document.body.setAttribute('data-theme', themes[themeIndex]);
-                if (themes[themeIndex] === 'light') themeIcon.className = 'fas fa-moon';
-                else if (themes[themeIndex] === 'dark') themeIcon.className = 'fas fa-star';
-                else themeIcon.className = 'fas fa-sun';
+                
+                // تغيير الأيقونة حسب الثيم
+                if (themes[themeIndex] === 'light') {
+                    themeIcon.className = 'fas fa-moon';
+                } else if (themes[themeIndex] === 'dark') {
+                    themeIcon.className = 'fas fa-star';
+                } else {
+                    themeIcon.className = 'fas fa-sun';
+                }
+                
+                // حفظ الثيم في localStorage
                 localStorage.setItem('theme', themes[themeIndex]);
             }
             
-            themeToggle.addEventListener('click', () => {
+            // تبديل الثيم
+            themeToggle.addEventListener('click', function() {
                 currentThemeIndex = (currentThemeIndex + 1) % themes.length;
                 applyTheme(currentThemeIndex);
             });
             
+            // تحميل الثيم المحفوظ
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 currentThemeIndex = themes.indexOf(savedTheme);
@@ -298,191 +289,92 @@
                 applyTheme(currentThemeIndex);
             }
             
-            const openSideNav = () => { sideNav.classList.add('open'); navOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
-            const closeSideNav = () => { sideNav.classList.remove('open'); navOverlay.classList.remove('open'); document.body.style.overflow = ''; };
+            // فتح القائمة الجانبية
+            function openSideNav() {
+                sideNav.classList.add('open');
+                navOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
 
-            if (closeNav) closeNav.addEventListener('click', closeSideNav);
-            if (menuBtn) menuBtn.addEventListener('click', (e) => { e.preventDefault(); openSideNav(); });
-            if (navOverlay) navOverlay.addEventListener('click', closeSideNav);
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSideNav(); });
+            // إغلاق القائمة الجانبية
+            function closeSideNav() {
+                sideNav.classList.remove('open');
+                navOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
 
+            // إضافة مستمع الأحداث لزر الإغلاق
+            if (closeNav) {
+                closeNav.addEventListener('click', closeSideNav);
+            }
+
+            // إضافة مستمع الأحداث لزر القائمة
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openSideNav();
+                });
+            }
+
+            // إضافة مستمع الأحداث للخلفية المظللة
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeSideNav);
+            }
+
+            // إغلاق القائمة عند الضغط على مفتاح Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSideNav();
+                }
+            });
+
+            // تحديث رسالة الترحيب حسب دور المستخدم
             function updateWelcomeMessage() {
                 const welcomeMessage = document.querySelector('.welcome-message');
                 if (!welcomeMessage) return;
+                
                 let userData = null;
                 try {
-                    userData = JSON.parse(localStorage.getItem('userData')) || JSON.parse(sessionStorage.getItem('userData'));
-                } catch (error) { console.log('لا توجد بيانات مستخدم مسجل'); }
+                    userData = JSON.parse(localStorage.getItem('userData')) || 
+                              JSON.parse(sessionStorage.getItem('userData'));
+                } catch (error) {
+                    console.log('لا توجد بيانات مستخدم مسجل');
+                }
+                
                 if (userData && userData.loggedIn) {
-                    welcomeMessage.textContent = `مرحباً بك ${userData.role === 'قائد الفريق' ? 'قائد' : 'عضو'} فريق الأنامل الرقمية (${userData.name})`;
+                    if (userData.role === 'قائد الفريق') {
+                        welcomeMessage.textContent = `مرحباً بك قائد فريق الأنامل الرقمية (${userData.name})`;
+                    } else {
+                        welcomeMessage.textContent = `مرحباً بك عضو فريق الأنامل الرقمية ${userData.name}`;
+                    }
                 } else {
                     welcomeMessage.textContent = 'مرحباً بكم في فريق الأنامل الرقمية';
                 }
             }
+            
             window.updateWelcomeMessage = updateWelcomeMessage;
             updateWelcomeMessage();
-
-            // --- إعداد مشهد Three.js مع حركة الدخول ---
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas'), alpha: true, antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.toneMapping = THREE.ReinhardToneMapping;
-            camera.position.z = 2.5;
-
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
-            directionalLight.position.set(3, 3, 5);
-            scene.add(directionalLight);
-
-            const renderScene = new THREE.RenderPass(scene, camera);
-            const bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
-            bloomPass.threshold = 0;
-            bloomPass.strength = 0.6;
-            bloomPass.radius = 0.2;
-            const composer = new THREE.EffectComposer(renderer);
-            composer.addPass(renderScene);
-            composer.addPass(bloomPass);
-
-            const loader = new THREE.GLTFLoader();
-            let model;
-            let introAnimationFinished = false; // متغير لتتبع حالة الحركة
-
-            loader.load(
-                'https://raw.githubusercontent.com/ahmedabdelraouf20/DF-team/main/models/logo.glb',
-                (gltf ) => {
-                    model = gltf.scene;
-                    model.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material.metalness = 0.8;
-                            child.material.roughness = 0.3;
-                        }
-                    });
-                    model.scale.set(1.5, 1.5, 1.5);
-                    
-                    // **الوضع الأولي للنموذج (يسار الشاشة ويدور)**
-                    model.position.x = -5; // أقصى اليسار
-                    model.rotation.x = Math.PI / 2; // جعله مواجهاً للجانب مثل عملة واقفة
-                    
-                    scene.add(model);
-                    
-                    // **بدء تسلسل الحركة باستخدام Anime.js**
-                    const introTimeline = anime.timeline({
-                        easing: 'easeInOutSine',
-                        complete: () => {
-                            introAnimationFinished = true; // تم انتهاء حركة الدخول
-                        }
-                    });
-
-                    introTimeline
-                        .add({
-                            // المرحلة الأولى: التدحرج من اليسار إلى الوسط
-                            targets: model.position,
-                            x: 0, // إلى وسط الشاشة
-                            duration: 2000,
-                            update: () => {
-                                // استمرار دوران التدحرج أثناء الحركة
-                                model.rotation.y += 0.15; 
-                            }
-                        })
-                        .add({
-                            // المرحلة الثانية: الاقتراب للأمام والاستقرار
-                            targets: [model.position, model.rotation],
-                            z: [0, 0], // يبقى في مكانه على محور Z
-                            x: [0, 0], // يبقى في مكانه على محور X
-                            y: [0, 0], // يبقى في مكانه على محور Y
-                            // إرجاع الدوران إلى الوضع الطبيعي
-                            x: 0, 
-                            duration: 1500,
-                        }, '-=500'); // تبدأ قبل نهاية الحركة السابقة بقليل
-
-                    animate();
-                },
-                undefined,
-                (error) => { console.error('حدث خطأ أثناء تحميل النموذج:', error); }
-            );
-
-            let mouseX = 0, mouseY = 0;
-            let targetX = 0, targetY = 0;
-            const windowHalfX = window.innerWidth / 2;
-            const windowHalfY = window.innerHeight / 2;
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX - windowHalfX);
-                mouseY = (event.clientY - windowHalfY);
-            });
-
-            const clock = new THREE.Clock();
-            const animate = () => {
-                requestAnimationFrame(animate);
-                const elapsedTime = clock.getElapsedTime();
-                
-                // فقط قم بتطبيق حركة الفأرة والدوران البطيء **بعد** انتهاء حركة الدخول
-                if (model && introAnimationFinished) {
-                    targetX = mouseX * .001;
-                    targetY = mouseY * .001;
-                    
-                    // حركة دورانية تلقائية بطيئة
-                    model.rotation.y += 0.001;
-
-                    // حركة تفاعلية سلسة مع الفأرة
-                    model.rotation.y += .5 * (targetX - model.rotation.y);
-                    model.rotation.x += .05 * (targetY - model.rotation.x);
-                }
-                
-                composer.render();
+            
+            // إضافة تأثيرات ظهور عند التمرير
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
-
-            window.addEventListener('resize', () => {
-                const width = window.innerWidth;
-                const height = window.innerHeight;
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-                composer.setSize(width, height);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            });
-
-            // --- حركات Anime.js للعناصر الأخرى (تبقى كما هي) ---
-            anime.timeline({ easing: 'easeOutExpo' })
-                .add({ targets: '.hero-title', opacity: [0, 1], translateY: [20, 0], duration: 800, delay: 2500 }) // تأخير ظهور النص
-                .add({ targets: '.hero-desc', opacity: [0, 1], translateY: [20, 0], duration: 800 }, '-=500')
-                .add({ targets: '.hero-btns a', opacity: [0, 1], translateY: [20, 0], duration: 600, delay: anime.stagger(100) }, '-=400');
-
-            const addHoverEffect = (selector, y, scale) => {
-                document.querySelectorAll(selector).forEach(el => {
-                    el.addEventListener('mouseenter', () => anime({ targets: el, translateY: y, scale: scale, duration: 200, easing: 'easeOutSine' }));
-                    el.addEventListener('mouseleave', () => anime({ targets: el, translateY: 0, scale: 1, duration: 200, easing: 'easeOutSine' }));
-                });
-            };
-            addHoverEffect('.btn', -5, 1.05);
-            addHoverEffect('.training-card, .testimonial-card', -8, 1.02);
-
-            const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const statNumberEl = target.querySelector('h3[data-stat-number]');
-                        if (statNumberEl && !statNumberEl.classList.contains('animated')) {
-                            const finalValue = statNumberEl.getAttribute('data-stat-number');
-                            anime({ targets: statNumberEl, innerHTML: [0, finalValue], round: 1, easing: 'easeOutExpo', duration: 1500 });
-                            statNumberEl.classList.add('animated');
-                        }
-                        anime({ targets: target, opacity: [0, 1], translateY: [20, 0], duration: 800, easing: 'easeOutExpo', delay: (parseInt(target.dataset.index) % 4) * 100 });
-                        observer.unobserve(target);
+                        entry.target.classList.add('animate-in');
                     }
                 });
             }, observerOptions);
-
-            document.querySelectorAll('.stat-card, .training-card, .testimonial-card, .leader-card').forEach((card, index) => {
-                card.dataset.index = index;
+            
+            // مراقبة العناصر لإضافة تأثير الظهور
+            document.querySelectorAll('.stat-card, .training-card, .testimonial-card, .leader-card').forEach(function(card) {
                 observer.observe(card);
             });
-
-            console.log(`DF developers are saying hii`);
         });
+            console.log(`DF devolopers are saying hii`);
     </script>
 </body>
 </html>
