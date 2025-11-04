@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فريق الانامل الرقمية | مدرسة الشهيد مدحت طلعت الرسمية للغات</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png" >
+  <style>
+    /* Fixed header logo styles */
+    .fixed-header-logo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .fixed-header-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    /* Adjust header position to account for fixed logo */
+    .main-header {
+      padding-left: 80px; /* Make space for the fixed logo */
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .fixed-header-logo {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 10px;
+      }
+      
+      .main-header {
+        padding-left: 65px;
+      }
+    }
+  </style>
+</head>
+<script src="static/js/auth.js"></script>
+<script>
+  // عرض بيانات المستخدم في الصفحة الرئيسية
+  document.addEventListener('DOMContentLoaded', function() {
+    const userData = getUserData();
+    
+    if (userData) {
+      // إضافة اسم المستخدم في واجهة المستخدم
+      const userGreeting = document.createElement('div');
+      userGreeting.className = 'user-greeting';
+      userGreeting.innerHTML = `
+        <button id="logoutBtn" class="btn btn-sm btn-outline">تسجيل الخروج</button>
+      `;
+      
+      document.querySelector('.header-right').prepend(userGreeting);
+      
+      // إضافة حدث تسجيل الخروج
+      document.getElementById('logoutBtn').addEventListener('click', logout);
+    }
+  });
+</script>
+<body>
+  <!-- Fixed header logo -->
+  <div class="fixed-header-logo">
+    <img src="file:///D:/TeamWebsite%201.0.1/image/%D9%84%D9%88%D8%AC%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9%20.png" alt="شعار المدرسة">
+  </div>
+
+  <!-- خلفية متحركة ناعمة -->
+  <div class="background-animated"></div>
+
+  <!-- القائمة الجانبية (مخفية على الجوال وتظهر بالزر) -->
+  <aside class="side-nav" id="sideNav">
+    <div class="side-nav-header">
+      <img src="image/logo.png" alt="شعار" class="nav-logo">
+      <span class="nav-close" id="closeNav"><i class="fas fa-times"></i></span>
+    </div>
+    <nav class="side-nav-links">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="about.html"><i class="fas fa-users"></i> عن الفريق</a>
+      <a href="history.html"><i class="fas fa-clock-rotate-left"></i> تاريخ الفريق</a>
+      <a href="members.html"><i class="fas fa-address-book"></i> الأعضاء</a>
+      <a href="trainings.html"><i class="fas fa-chalkboard-teacher"></i> التدريبات</a>
+      <a href="news.html"><i class="fas fa-newspaper"></i> أخبار الفريق</a>
+      <a href="projects.html"><i class="fas fa-rocket"></i> المشاريع</a>
+      <a href="announcements.html"><i class="fas fa-bell"></i> الإعلانات</a>
+      <a href="events.html"><i class="fas fa-calendar-check"></i> الفعاليات</a>
+      <a href="resources.html"><i class="fas fa-book"></i> الموارد</a>
+      <a href="faq.html"><i class="fas fa-question"></i> الأسئلة الشائعة</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+      <a href="apply.html"><i class="fas fa-user-plus"></i> طلب الانضمام</a>
+    </nav>
+    <div class="side-nav-footer">
+      <div class="side-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="side-nav-copyright">
+        &copy; 2025 فريق الانامل الرقمية | DF Team
+      </div>
+    </div>
+  </aside>
+  <div class="overlay" id="navOverlay"></div>
+
+  <!-- ترويسة -->
+  <header class="main-header">
+    <div class="header-left">
+      <img src="image/logo.png" alt="شعار" class="logo">
+      <span class="brand-name">DF Team</span>
+    </div>
+    <div class="header-center">
+      <span class="welcome-message">مرحباً بكم أعضاء وقائد فريق الأنامل الرقمية</span>
+    </div>
+    <div class="header-right">
+      <a href="#" class="header-link header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></a>
+    </div>
+  </header>
+
+  <!-- الرئيسية/الهيرو -->
+  <section class="hero-section container">
+    <div class="hero-content">
+      <h1 class="hero-title">فريق الانامل الرقمية | DF Team </h1>
+      <div class="hero-underline"></div>
+      <p class="hero-desc">الفريق الصاعد</p>
+      <div class="hero-btns">
+        <a href="about.html" class="btn btn-primary">تعرف علينا</a>
+        <a href="members.html" class="btn btn-primary">فريقنا</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="image/logo.png" alt="شعار الفريق" loading="lazy">
+    </div>
+  </section>
+
+  <!-- إحصائيات -->
+  <section class="stats-section container">
+    <div class="stat-card">
+      <i class="fas fa-users"></i>
+      <h3>26</h3>
+      <p>عضو بالفريق</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>6+</h3>
+      <p>مشروع تقني</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3>9+</h3>
+      <p>ورشة تدريبية</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-trophy"></i>
+      <h3>0</h3>
+      <p>جوائز تقنية</p>
+    </div>
+  </section>
+
+  <!-- قائد الفريق -->
+  <section class="leader-section container">
+    <h2 class="section-title">قائد الفريق</h2>
+    <div class="leader-card glass" tabindex="0">
+      <img src="image/ahmed.jpg" alt="قائد الفريق" class="leader-img">
+      <div class="leader-info">
+        <h3>Ahmed Abdelraouf</h3>
+        <span class="leader-role">قائد الفريق</span>
+      </div>
+      <a href="member-details.html?id=169" class="btn btn-sm">عرض الصفحة الشخصية</a>
+    </div>
+  </section>
+
+
+  <!-- أحدث التدريبات -->
+  <section class="trainings-section container">
+    <h2 class="section-title">أحدث التدريبات</h2>
+    <div class="trainings-grid">
+      <div class="training-card glass">
+        <img src="image/WhatsApp Image 2025-08-17 at 01.42.55_b5f8e373.jpg" alt="تدريب" class="training-img">
+        <div class="training-info">
+          <h3>مهارات التواصل الفعال</h3>
+          <span class="training-date"><i class="far fa-calendar-alt"></i>13 اغسطس 2025 </span>
+          <p>لتطوير المهارات كثل التواصل مع المتدربين و مهارات الإلقء امام الجمهور و غيرها من المهارات المهمة في المجال </p>
+          <a href="trainings.html" class="btn btn-xs">التفاصيل</a>
+        </div>
+     
+      </div>
+      <div class="training-card glass">
+        <img src="image/IMG-20250820-WA0210.jpg" alt="تدريب" class="training-img">
+        <div class="training-info">
+          <h3>منحة اعداد مهارات القادة</h3>
+          <span class="training-date"><i class="far fa-calendar-alt"></i> 20 أغسطس 2025</span>
+          <p> تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
+          <a href="trainings.html" class="btn btn-xs" >التفاصيل</a>
+        </div>
+      </div>
+      
+      <div class="training-card glass">
+        <img src="image/IMG-20250820-WA0213.jpg" alt="تدريب" class="training-img">
+        <div class="training-info">
+          <h3>كورس scratch</h3>
+          <span class="training-date"><i class="far fa-calendar-alt"></i> 25 أغسطس 2025</span>
+          <p> تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
+          <a href="trainings.html" class="btn btn-xs">التفاصيل</a>
+        </div>
+      </div>
+      
+      <div class="training-card glass">
+        <img src="file:///D:/TeamWebsite%201.0.1/image/TOT.jpg " alt="تدريب" class="training-img">
+        <div class="training-info">
+          <h3>كورس TOT</h3>
+          <span class="training-date"><i class="far fa-calendar-alt"></i> 12 أغسطس 2025</span>
+          <p> تم تدريب مهارات تدريب المدربين لمعرفة كيف تصبح مدرب ناجح</p>
+          <a href="trainings.html" class="btn btn-xs">التفاصيل</a>
+        </div>
+     
+    </div>
+    <div class="view-all-center">
+      <a href="trainings.html" class="btn btn-outline" style="margin-right: 350px; position: absolute;" >عرض جميع التدريبات</a>
+    </div>
+  </section>
+
+  <!-- آراء المتدربين -->
+  <section class="testimonials-section container " style="width: 100%; ">
+    <h2 class="section-title">آراء المتدربين</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card glass">
+        <div class="testimonial-content" style="padding-top: 40px;">تجربة رائعة مع فريق الانامل الرقمية | DF Team ، تعلمت الكثير من المهارات التي ساعدتني في بداية مسيرتي.</div>
+        <div class="testimonial-author">
+          <img src="file:///C:/Users/os/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/C44799B04A1C72E3C8593A53E8000C78/WhatsApp%20Image%202025-08-13%20at%2017.37.21_622babbe.jpg" alt="متدرب">
+          <span>ملك ممدوح<br><small>متدربة سابقة</small></span>
+        </div>
+      </div>
+      <div class="testimonial-card glass">
+        <div class="testimonial-content" style="padding-top: 40px;">"الورش التدريبية كانت عملية ومفيدة والمدربين متعاونين ويمتلكون خبرة كبيرة."</div>
+        <div class="testimonial-author">
+          <img src="https://picsum.photos/seed/trainee2/50" alt="متدربة">
+          <span>سارة أحمد<br><small>متدربة سابقة</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- تذييل -->
+  <footer class="main-footer">
+    <div class="footer-content container">
+      <div class="footer-col">
+        <img src="file:///D:/TeamWebsite%201.0.1/image/logo.png" alt="شعار" class="footer-logo">
+        <h3> فريق الانامل الرقمية </h3>
+        <p>الفريق الصاعد</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الفريق</a></li>
+          <li><a href="members.html">الأعضاء</a></li>
+          <li><a href="trainings.html">التدريبات</a></li>
+          <li><a href="projects.html">المشاريع</a></li>
+          <li><a href="apply.html">طلب الانضمام</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><i class="fas fa-envelope">&nbsp; &nbsp;</i> info@DF.com</li>
+          <li><i class="fas fa-phone">&nbsp; &nbsp;</i> 0100-000-0000</li>
+          <li><i class="fas fa-map-marker-alt">&nbsp; &nbsp;</i>بنها - القليوبية - مصر</li>
+        </ul>
+        <br>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          &nbsp; &nbsp;
+          <a href="#"><i class="fab fa-github"></i></a>
+          &nbsp; &nbsp;
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      جميع الحقوق محفوظة © 2025 فريق الأنامل الرقمية- DF Team
+    </div>
+    </div>
+  </footer>
+
+  <!-- السكريبتات -->
+  <script src="static/js/scripts.js"></script>
+</body>
+</html>

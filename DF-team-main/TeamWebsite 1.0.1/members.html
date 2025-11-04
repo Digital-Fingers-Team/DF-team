@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أعضاء الفريق | فريق الأنامل الرقمية</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png" >
+</head>
+<body>
+  <!-- القائمة الجانبية (مخفية على الجوال وتظهر بالزر) -->
+  <aside class="side-nav" id="sideNav">
+    <div class="side-nav-header">
+      <img src="image/logo.png" alt="شعار" class="nav-logo">
+      <span class="nav-close" id="closeNav"><i class="fas fa-times"></i></span>
+    </div>
+    <nav class="side-nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="about.html"><i class="fas fa-users"></i> عن الفريق</a>
+      <a href="history.html"><i class="fas fa-clock-rotate-left"></i> تاريخ الفريق</a>
+      <a href="members.html" class="active"><i class="fas fa-address-book"></i> الأعضاء</a>
+      <a href="trainings.html"><i class="fas fa-chalkboard-teacher"></i> التدريبات</a>
+      <a href="news.html"><i class="fas fa-newspaper"></i> أخبار الفريق</a>
+      <a href="projects.html"><i class="fas fa-rocket"></i> المشاريع</a>
+      <a href="announcements.html"><i class="fas fa-bell"></i> الإعلانات</a>
+      <a href="events.html"><i class="fas fa-calendar-check"></i> الفعاليات</a>
+      <a href="resources.html"><i class="fas fa-book"></i> الموارد</a>
+      <a href="faq.html"><i class="fas fa-question"></i> الأسئلة الشائعة</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+    </nav>
+    <div class="side-nav-footer">
+      <div class="side-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="side-nav-copyright">
+        &copy; 2025 فريق الانامل الرقمية | DF Team
+      </div>
+    </div>
+  </aside>
+  <div class="overlay" id="navOverlay"></div>
+
+  <!-- ترويسة -->
+  <header class="main-header">
+    <div class="header-left">
+      <img src="image/logo.png" alt="شعار" class="logo">
+      <span class="brand-name">DF Team</span>
+    </div>
+    <div class="header-center">
+      <span class="welcome-message">مرحباً بكم أعضاء وقائد فريق الأنامل الرقمية</span>
+    </div>
+    <div class="header-right">
+      <a href="#" class="header-link header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></a>
+    </div>
+  </header>
+  <main class="container">
+    <section style="margin-top: 60px;">
+      <h1 class="section-title">Members Of Team</h1>
+      <div class="glass" style="padding: 18px; margin-bottom: 25px;">
+      </div>
+      <div id="members-list" style="display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;">
+        <!-- البطاقات تظهر تلقائياً -->
+      </div>
+    </section>
+  </main>
+  <!-- تذييل -->
+  <footer class="main-footer">
+    <div class="footer-content container">
+      <div class="footer-col">
+        <img src="file:///D:/TeamWebsite%201.0.1/image/logo.png" alt="شعار" class="footer-logo">
+        <h3> فريق الانامل الرقمية </h3>
+        <p>الفريق الصاعد</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الفريق</a></li>
+          <li><a href="members.html">الأعضاء</a></li>
+          <li><a href="trainings.html">التدريبات</a></li>
+          <li><a href="projects.html">المشاريع</a></li>
+          <li><a href="apply.html">طلب الانضمام</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><i class="fas fa-envelope">&nbsp; &nbsp;</i> info@DF.com</li>
+          <li><i class="fas fa-phone">&nbsp; &nbsp;</i> 0100-000-0000</li>
+          <li><i class="fas fa-map-marker-alt">&nbsp; &nbsp;</i>بنها - القليوبية - مصر</li>
+        </ul>
+        <br>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          &nbsp; &nbsp;
+          <a href="#"><i class="fab fa-github"></i></a>
+          &nbsp; &nbsp;
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      جميع الحقوق محفوظة © 2025 فريق الأنامل الرقمية- DF Team
+    </div>
+  </footer>
+  <script src="static/js/scripts.js"></script>
+  <script>
+    // بيانات الفريق (مهند تامر أولاً، ثم الباقي حسب طلبك)
+    const members = [
+      {
+        id: 0,
+        name: "Ahmed AbdelRaouf Samir",
+        age: "17 years old",
+        education: "Secondary 2",
+        role: "Team Leader",
+        img: "image/ahmed.jpg",
+        experiences: [
+          "Certified Python Instructor",
+          "Holds TOT training certificates and ID",
+          "Works with Microsoft Qalyubia",
+          "Studied Data Analysis"
+        ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 1,
+        name: "Baraa Saad",
+        age: "14 Years old",
+        education: "prep 2",
+        role: "Operation And Quality Team Leader",
+        img: "image/file_2025-08-19_12.00.12.png",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 2,
+        name: "Yassen Sayad",
+        age: "13 Years old",
+        education: "prep 3",
+        role: "co-leader And Programing Team Leader",
+        img: "image/ياسين.png",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 3,
+        name: "Eyad abdelraouf",
+        age: "14 Years old",
+        education: "prep 2",
+        role: "Ai team leader",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 4,
+        name: "Anas Saad",
+        age: "14 Years old",
+        education: "prep 3",
+        role: "Media Team Leader",
+        img: "image/file_2025-08-19_11.53.40.png",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 5,
+        name: "Hla sarhan",
+        age: "14 Years old",
+        education: "prep 2",
+        role: "Media Team Member",
+        img: "image/hla.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 6,
+        name: "Ahmed Elsayed",
+        age: "15 Years old",
+        education: "Secondary 1",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 7,
+        name: "Hamza Sherif",
+        age: "15 Years old",
+        education: "Secondary 1",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 8,
+        name: "Jana Eslam",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 9,
+        name: "Salma Mostafa",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 10,
+        name: "Soha Sameh",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 11,
+        name: "Jana Mohamed",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Media Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 12,
+        name: "Jana Hazem",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/j,hazem.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 13,
+        name: "Fayroz Tarek",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Media Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 14,
+        name: "Salma Sameh",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 15,
+        name: "Jomana Hazem",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 16,
+        name: "Nada Elsayed",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 17,
+        name: "Renad Mahmoud",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 18,
+        name: "Jana Maher",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Media Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 19,
+        name: "Malak Abdelfatah",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 20,
+        name: "Sama Abdelfatah",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 21,
+        name: "Sama Eslam",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 22,
+        name: "Dina Mohamed",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 23,
+        name: "Baraa Mohamed",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 24,
+        name: "Hana Nabil",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 25,
+        name: "Farida Magdy",
+        age: "14 Years old",
+        education: "Prep 3",
+        role: "Media Team Member",
+        img: "image/profile.jpg",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+      {
+        id: 26,
+        name: "Malak Mamdouh",
+        age: "14 Years old",
+        education: "Sec 1",
+        role: "The Best Team Member",
+        img: "image/loka.png",
+        experiences: [ "No major past experiences" ],
+        skills: ["Python", "Html", "Css"]
+      },
+    ];
+
+    // عرض البطاقات
+    const list = document.getElementById('members-list');
+    members.forEach(member => {
+      const card = document.createElement('a');
+      card.href = `member-details.html?id=${member.id}`;
+      card.className = "service-card glass";
+      card.style = "max-width:180px; text-align:center; text-decoration:none; box-shadow: 0 0 0 0 transparent;";
+      card.innerHTML = `
+        <img src="${member.img}" alt="${member.name}" style="border-radius:50%; width:70px; margin-bottom:10px;${member.id===0 ? 'box-shadow:0 0 0 4px #1fd0ff;' : ''}">
+        <h4 style="color:#1fd0ff; margin:0;">${member.name}</h4>
+        <span style="font-size:.99em; color:#eee;">${member.role}</span>
+        ${member.id===0 ? `<div style="color:#1fd0ff;font-size:.9em;margin-top:4px;font-weight:bold;"></div>`:""}
+      `;
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>
